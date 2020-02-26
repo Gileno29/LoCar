@@ -1,5 +1,6 @@
 package app;
 
+import java.io.IOException;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 
@@ -72,17 +73,25 @@ public class Locacao {
 		this.codLocacao = codLocacao;
 	}
 	
-	public void validaLocacao(Veiculo v) {
+	public void validaLocacao(Veiculo v) throws IOException {
 		if((this.veiculo!=null)) {
-			System.out.println("Entrei ");
+			//System.out.println("Entrei ");
 			if((v.equals(this.veiculo))) {
-				System.out.println("erro veiculo não pode ser locado");
+				throw new IOException("Erro Veiculo já está alocado, função não permitida");
 			}else {
 				this.veiculo= v;
 			}
 	}else {
 		this.veiculo=v;
 	}
+		
+	}
+	
+	
+	
+	public void teste(Veiculo v1, Veiculo v2) {
+		System.out.println(v1.getCodVeiculo());
+		System.out.println(v2.getCodVeiculo());
 		
 	}
 

@@ -1,5 +1,6 @@
 package client;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import app.Cliente;
@@ -24,14 +25,16 @@ public class Principal {
 		
 		ListaLocacao l= new ListaLocacao();
 		Locacao lo = new Locacao(1,cliente01);// primeira Locacao
-		lo.validaLocacao(v1);	
-		l.locar(lo);
-		lo.validaLocacao(v2);
-		l.locar(lo);
 		
-		//l.locar(l1);
+		try {
+			lo.validaLocacao(v1);
+			l.locar(lo);
+			lo.validaLocacao(v1);
+			l.locar(lo);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
 		
-		l.listar();
-
 }
 }
