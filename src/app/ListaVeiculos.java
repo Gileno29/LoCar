@@ -62,5 +62,38 @@ public class ListaVeiculos{
     	}
     }
 	
+	public void RemoveDado(Object ob){
+		  Celula atual;
+		  Celula antes;
+		  if (this.isEmpty()){
+		      System.out.println("lista vazia: "+isEmpty());
+		  }else{   //Caso a lista nao esteja vazia
+		      atual = first;
+		      antes = null;
+		      while (atual != null){
+		    	  if (atual.getElemento().equals(ob)) {
+		    		  if (atual == first) {
+		    			  if(first.getProxima() != null){
+		    				  first = first.getProxima();
+		    				  tamanho --;
+		    				  break;
+		    				  }else{
+		    					  first = null;
+		    					  tamanho --;
+		    					  break;
+		    				  }
+		    		  }else{
+		    			  antes.setProxima(atual.getProxima());
+		    			  tamanho --;
+		    			  break;
+		    			  }
+		    	 }else{
+		    		 antes = atual;
+		    		 atual = atual.getProxima();
+		}
+		      }
+		  }
+		}
+	
 	
 }

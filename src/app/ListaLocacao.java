@@ -3,6 +3,7 @@ package app;
 public class ListaLocacao {
 	private Celula first;
 	private int tamanho=0;
+	
 	 
 	public ListaLocacao() {
 	    	this.first=null;
@@ -17,7 +18,6 @@ public class ListaLocacao {
 	public int tamanho() {
 		return tamanho;
 	}
-	
 	public void locar(Object ob) {
 		Celula novaCelula= new Celula(ob);
 		novaCelula.setProxima(null);
@@ -57,6 +57,32 @@ public class ListaLocacao {
     		aux=aux.getProxima();
     	}
     }
+	
+	
+	public boolean checarLocacao() {
+		/*if(first==null) {
+			return true;
+			
+		}else {
+			Celula Aux= first;
+			while(Aux.getProxima() != null) {
+				if(Aux.getElemento().equals(l)) {
+					System.out.println("Carro já alocado");
+					
+					return false;
+				}
+				
+			}
+			
+		}
+		
+		return true;*/
+		System.out.println(first);
+		
+		return true;
+		
+		
+	}
 	
 
 }
