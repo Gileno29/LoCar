@@ -23,18 +23,23 @@ public class Principal {
 		vl.inserir(v1);//insere na lista de veiculos
 		vl.inserir(v2);//insere na lista de veiculos
 		
+		vl.buscar(v2);
+		
 		ListaLocacao l= new ListaLocacao();
 		Locacao lo = new Locacao(1,cliente01);// primeira Locacao
+		
+		
 		
 		try {
 			lo.validaLocacao(v1);
 			l.locar(lo);
-			lo.validaLocacao(v1);
+			lo.validaLocacao(v2);
 			l.locar(lo);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}	
+		
 		
 }
 }
